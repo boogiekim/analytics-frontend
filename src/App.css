@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+/* Reset and global styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: white;
+  color: var(--text-color);
+  transform: scale(0.9);
+  transform-origin: top center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Root variables for color and layout */
+:root {
+  --primary-color: #5b5f97;
+  --secondary-color: #4dabf7;
+  --accent-color: #f50057;
+  --background-color: #f4f5f7;
+  --text-color: #343a40;
+  --header-height: 150px;
+  --footer-height: 60px;
+  --chart-size: 80vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*, *::before, *::after {
+  box-sizing: border-box; /* Add this line */
 }
 
+
+/* Header styles */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 15vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Main content styles */
+.App-content {
+  padding: 20px;
+  flex-grow: 1;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  overflow-y: auto;
+}
+
+/* Footer styles */
+.App-footer {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  height: var(--footer-height);
+  width: 100%;
+}
+
+/* Chart container styles */
+.chart-container {
+  position: relative;
+  height: var(--chart-size);
+  width: calc(var(--chart-size) * 1.33);
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid #aaa
+}
+
+/* App body layout */
+.App-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* App wrapper layout */
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+}
+
+/* Reset and global styles */
+/* ... Your existing reset and global styles ... */
+
+
+
+/* Individual tab items */
+.nav-item {
+  padding: none;
+  margin-bottom: -1px;
+
+  /* Negative margin for border overlap */
+}
+
+/* Individual tab links */
+.nav-link {
+  font-weight: bold;
+  background-color: #f8f9fa;
+  /* Non-active tab background */
+  border: 1px solid #dee2e6;
+  border-bottom: none;
+  /* Border matching the container */
+  margin-right: -1px;
+  /* Overlap borders between tabs */
+  padding: none;
+  /* Tab padding */
+}
+
+/* Active tab link */
+.nav-link.active {
+  background-color: #F1E5AC;
+  /* Active tab background */
+  border-color: #dee2e6 #dee2e6 #fff;
+  /* Border color, bottom border transparent */
+  border-bottom: 2px solid #fff;
+  /* Active tab bottom border to "merge" with content */
+  padding: 0rem;
+}
+
+
+
+/* Card body containing the tab content */
+.card-body {
+  margin-top: 2vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 4rem;
+  /* Padding for content */
+  border: 1px solid #dee2e6;
+  /* Border around content */
+  /* Remove top border */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-link {
+    padding: 0rem, 0.5rem;
+    /* Smaller padding for mobile */
+  }
+}
+
+/* Additional adjustments for visual polish */
+.nav-tabs {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-bottom: 0rem;
+  /* Center tabs if desired */
 }
 
-.App-link {
-  color: #61dafb;
+.nav-tabs.nav-link {
+  padding: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav.nav-tabs.card-header-tabs {
+  padding-bottom: 0rem;
 }
+
+/* Ensure that the tabs container sticks to the tabs */
+.tabbed-header {
+  padding: 0;
+  margin-bottom: -1px;
+  /* Pull the tabs container up to meet the tabs */
+  padding-bottom: 0rem;
+}
+
+/* If there are additional containers like .tabbed-card, they should not interfere with the tab layout */
+.tabbed-card {
+  border: none;
+  /* Remove additional borders that may cause visual issues */
+}
+
