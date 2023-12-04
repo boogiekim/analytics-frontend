@@ -37,6 +37,7 @@ import React from 'react';
 // };
 
 const MainLayout = ({ embedUrls }) => {
+  console.log("Embed URLs: ", embedUrls);
   return (
     <div className="page">
       <div className="page-wrapper">
@@ -45,20 +46,15 @@ const MainLayout = ({ embedUrls }) => {
             <div className="row row-deck row-cards">
               {embedUrls.map((url, index) => (
                 <div className="col-4" key={index}>
-                  <div className="card">
-                    <div className="data-body" style={{ height: '20rem' }}>
+                    <div className="data-body">
                       <iframe
                         src={url}
                         title={`Dashboard-${index}`}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 'none' }}
                         allowFullScreen
                         sandbox="allow-scripts allow-same-origin"
                       ></iframe>
                     </div>
                   </div>
-                </div>
               ))}
             </div>
           </div>

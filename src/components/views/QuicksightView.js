@@ -53,7 +53,7 @@ const QuicksightView = () => {
       </header>
       <div className="tabbed-card">
         <div className="tabbed-header">
-          <ul className="nav nav-tabs card-header-tabs" style={{ backgroundColor: 'white', paddingBottom: '0rem', display: 'flex', justifyContent: 'center'}}>
+          <ul className="nav nav-tabs card-header-tabs" style={{ backgroundColor: 'white', paddingBottom: '2%', display: 'flex', justifyContent: 'center'}}>
             <li className="nav-item">
               <a
                 href="#tabs-home-ex1"

@@ -7,26 +7,11 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: white;
   color: var(--text-color);
-  transform: scale(0.9);
-  transform-origin: top center;
+  /* transform: scale(0.9); */
+  /* transform-origin: top center; */
 
 }
 
-/* Root variables for color and layout */
-:root {
-  --primary-color: #5b5f97;
-  --secondary-color: #4dabf7;
-  --accent-color: #f50057;
-  --background-color: #f4f5f7;
-  --text-color: #343a40;
-  --header-height: 150px;
-  --footer-height: 60px;
-  --chart-size: 80vh;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box; /* Add this line */
-}
 
 
 /* Header styles */
@@ -43,19 +28,12 @@ body {
   object-fit: cover;
 }
 
-/* Main content styles */
-.App-content {
-  padding: 20px;
-  flex-grow: 1;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
-  overflow-y: auto;
-}
-
 /* Footer styles */
 .App-footer {
   background-color: white;
   color: black;
   text-align: center;
+  margin-top: 10%;
   padding: 10px;
   height: var(--footer-height);
   width: 100%;
@@ -64,9 +42,6 @@ body {
 /* Chart container styles */
 .chart-container {
   position: relative;
-  height: var(--chart-size);
-  width: calc(var(--chart-size) * 1.33);
-  margin: auto;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -133,17 +108,6 @@ body {
 
 
 
-/* Card body containing the tab content */
-.card-body {
-  margin-top: 2vh;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 4rem;
-  /* Padding for content */
-  border: 1px solid #dee2e6;
-  /* Border around content */
-  /* Remove top border */
-}
 
 
 
@@ -174,6 +138,7 @@ body {
 .tabbed-header {
   padding: 0;
   margin-bottom: -1px;
+  margin-top: -2%;
   /* Pull the tabs container up to meet the tabs */
   padding-bottom: 0rem;
 }
@@ -184,3 +149,71 @@ body {
   /* Remove additional borders that may cause visual issues */
 }
 
+.page-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.row-deck {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.data-body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.container-xl {
+  max-width: 100%;
+}
+
+.col-4 {
+  flex: 0 0 50%;
+  margin-right: -3%;
+  margin-left: -3%;
+  margin-bottom: -4%;
+}
+
+.full-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-dashboard-iframe {
+  width: 100%;
+  height: 125vh;
+  border: none;
+  transform-origin: top-center;
+  margin-top: -7.5%;
+  padding:none;
+}
+
+iframe {
+  height: 535px;
+  width: 810px;
+  border: 1px solid gray;
+  transform: scale(.8);
+  transform-origin: center center;
+  margin-top: -5%;
+  margin-bottom: 5%;
+  padding-top: 0;
+}
+
+/* Responsive adjustments for the .row-deck if necessary */
+@media (max-width: 768px) {
+  .row-deck {
+    /* Adjust flex settings for mobile view */
+    flex-direction: row;
+  }
+}
